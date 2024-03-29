@@ -23,7 +23,7 @@ export default function RootLayout({
         <body className={`${helvetica.className} antialiased`}>
           <div className=" container px-[24px] pt-[10px] md:px-[40px] md:pt-[16px]">
             <Header />
-            {children}
+            <main>{children}</main>
             <Footer />
           </div>
         </body>

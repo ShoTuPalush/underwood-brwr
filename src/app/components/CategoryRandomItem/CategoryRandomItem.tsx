@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { Open_Sans } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -28,10 +29,13 @@ export function CategoryRandomItem() {
           <p className="mb-[18px] font-bold uppercase text-xs text-[#363636]">
             Count meals: **
           </p>
-          <button className="flex items-center gap-[10px] w-full h-[30px] pl-[16px] rounded-[2px] bg-[#f3e1ff] text-xs text-[#363636] ">
+          <Link
+            href={'/products'}
+            className="flex items-center gap-[10px] w-full h-[30px] pl-[16px] rounded-[2px] bg-[#f3e1ff] text-xs text-[#363636] "
+          >
             Read more{' '}
             <Image src={'/svg/arrow.svg'} alt="arrow" width={21} height={6} />
-          </button>
+          </Link>
         </div>
       </li>
     </>

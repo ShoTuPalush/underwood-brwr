@@ -14,7 +14,7 @@ const links = [
 ];
 
 export function NavLinks({ mob }: { mob: boolean }) {
-  const pathname = usePathname();
+  const pathname = '/' + usePathname().split('/')[1];
   return (
     <>
       <nav
