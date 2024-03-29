@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Inter, Open_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import TanstackProvider from '@/providers/TanstackProvider';
-import { Header } from '@/components/Header/Header';
-import { Footer } from '@/components/Footer/Footer';
+import TanstackProvider from '@/app/components/providers/TanstackProvider';
+import { Header } from '@/app/components/Header/Header';
+import { Footer } from '@/app/components/Footer/Footer';
 
 const helvetica = localFont({ src: '../fonts/Helvetica.woff2' });
 const openSans = Open_Sans({ subsets: ['latin'] });

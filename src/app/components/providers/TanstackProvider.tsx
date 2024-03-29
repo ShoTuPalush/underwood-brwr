@@ -2,18 +2,20 @@
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools/production';
+import { useMemo } from 'react';
 
 export default function TanstackProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const querryClient = new QueryClient();
+  const client = useMemo(() => new QueryClient(), []);
+
   return (
     <>
-      <QueryClientProvider client={querryClient}>
+      <QueryClientProvider client={client}>
         {children}
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>
   );

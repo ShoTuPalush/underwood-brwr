@@ -25,10 +25,13 @@ export function NavLinks({ mob }: { mob: boolean }) {
             key={link.name}
             className={clsx(
               'font-bold uppercase flex justify-center items-center rounded-[2px]',
-              pathname === link.href &&
-                (mob ? 'text-black bg-white' : 'bg-[#363636] text-white'),
+
               mob
-                ? 'text-lg text-white w-[164px] h-[50px]'
+                ? pathname === link.href
+                  ? 'text-lg text-black bg-white w-[164px] h-[50px]'
+                  : 'text-lg text-white w-[164px] h-[50px]'
+                : pathname === link.href
+                ? 'text-xs bg-[#363636] text-white w-[138px] h-[46px]'
                 : 'text-xs text-[#363636] w-[138px] h-[46px]'
             )}
             href={link.href}
