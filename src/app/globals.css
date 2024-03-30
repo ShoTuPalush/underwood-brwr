@@ -3,6 +3,10 @@
 @tailwind utilities;
 @tailwind variants;
 
+body {
+  background-color: white;
+}
+
 .no-scroll {
   overflow: hidden;
 }
