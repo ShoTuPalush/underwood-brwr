@@ -9,6 +9,9 @@ const helvetica = localFont({ src: '../fonts/Helvetica.woff2' });
 
 export const metadata: Metadata = {
   title: 'underwood-brwr',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +26,7 @@ export default function RootLayout({
       <html lang="en">
         <TanstackProvider>
           <body className={`${helvetica.className} antialiased`}>
+            <link rel="icon" href="/favicon.ico" sizes="any" />
             {modal}
             <div className=" container px-[24px] pt-[10px] md:px-[40px] md:pt-[16px]">
               <Header />
