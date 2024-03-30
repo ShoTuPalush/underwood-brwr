@@ -23,10 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <TanstackProvider>
         <body className={`${helvetica.className} antialiased`}>
+          {modal}
           <div className=" container px-[24px] pt-[10px] md:px-[40px] md:pt-[16px]">
             <Header />
-            {modal}
-            <div id="modal-root" />
+
             <main>{children}</main>
             <Footer />
           </div>

@@ -1,10 +1,12 @@
 'use client';
 
+import * as Dialog from '@radix-ui/react-dialog';
 import { type ElementRef, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { createPortal } from 'react-dom';
+import { useWindowSize } from '@/hooks/useWindowSize/useWindowSize';
 
 export function Modal({ children }: { children: React.ReactNode }) {
+  const width = useWindowSize();
   const router = useRouter();
   const dialogRef = useRef<ElementRef<'dialog'>>(null);
 
@@ -15,18 +17,23 @@ export function Modal({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  function onDismiss() {
-    document.documentElement.className = '';
-    router.back();
+  function onDismiss(open: boolean) {
+    if (!open) {
+      if (width > 767) {
+        document.documentElement.className = '';
+      }
+      router.back();
+    }
   }
 
-  return createPortal(
-    <div className="modal-backdrop">
-      <dialog ref={dialogRef} className="modal" onClose={onDismiss}>
-        {children}
-        <button onClick={onDismiss} className="close-button" />
-      </dialog>
-    </div>,
-    document.getElementById('modal-root')!
+  return (
+    <Dialog.Root open onOpenChange={onDismiss}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 bg-[#73737399] z-20" />
+        <Dialog.DialogContent className="fixed left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2">
+          {children}
+        </Dialog.DialogContent>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
