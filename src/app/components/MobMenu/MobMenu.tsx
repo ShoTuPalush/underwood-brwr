@@ -32,7 +32,7 @@ export function MobMenu() {
           >
             <Image src={'/svg/close.svg'} alt={'X'} width={24} height={24} />
           </button>
-          <NavLinks mob={true} />
+          <NavLinks mob={true} setOpenMobMenu={toogleModal} />
         </div>
       )}
     </>

@@ -13,7 +13,13 @@ const links = [
   { name: 'contact us', href: '/contact' },
 ];
 
-export function NavLinks({ mob }: { mob: boolean }) {
+export function NavLinks({
+  mob,
+  setOpenMobMenu,
+}: {
+  mob: boolean;
+  setOpenMobMenu: () => void;
+}) {
   const pathname = '/' + usePathname().split('/')[1];
   return (
     <>
@@ -22,6 +28,7 @@ export function NavLinks({ mob }: { mob: boolean }) {
       >
         {links.map(link => (
           <Link
+            onClick={setOpenMobMenu}
             key={link.name}
             className={clsx(
               'font-bold uppercase flex justify-center items-center rounded-[2px]',
