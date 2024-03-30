@@ -1,4 +1,4 @@
-import { Contact } from '@/app/components/Contact/Contact';
+import Contact from '@/app/components/Contact/Contact';
 import { Modal } from '@/app/components/Modal/Modal';
 
 export default function ContactModal() {
