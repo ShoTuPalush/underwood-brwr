@@ -12,12 +12,15 @@ export function Header() {
   return (
     <>
       <header className="flex justify-between items-center">
-        <Link href={'/'} className="relative">
+        <Link
+          href={'/'}
+          className="relative w-[70px] h-[29px] md:w-[90px] md:h-[46px]"
+        >
           <Image
+            className=""
             src={width > 767 ? '/img/logoDesk.png' : '/img/logoMob.png'}
             alt={'logo'}
-            width={width > 767 ? 90 : 70}
-            height={width > 767 ? 46 : 29}
+            fill
           />
         </Link>
         <NavLinks mob={false} />

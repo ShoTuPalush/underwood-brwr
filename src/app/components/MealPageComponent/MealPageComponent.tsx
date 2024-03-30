@@ -15,7 +15,7 @@ export function MealPageComponent({ meals }: { meals: Meals }) {
   const [truncate, setTruncate] = useState(false);
   return (
     <>
-      <div className="flex gap-[24px] lg:w-[670px] mx-auto">
+      <div className="flex gap-[24px] ">
         <div className="my-auto shrink-0">
           <Image
             src={meals.strMealThumb}

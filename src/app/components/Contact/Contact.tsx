@@ -22,6 +22,13 @@ export function Contact() {
   const width = useWindowSize();
   const router = useRouter();
 
+  const onDismiss = () => {
+    if (width > 767) {
+      document.documentElement.className = '';
+    }
+    router.back();
+  };
+
   const handleSubmit = (values: IForm) => {
     console.log(values);
   };
@@ -31,7 +38,7 @@ export function Contact() {
       <div className="w-[375px] h-auto bg-[white] border-none px-[24px] pt-[89px] pb-[100px] md:w-[768px] md:flex md:gap-[60px] md:p-[80px] lg:w-[1097px]">
         <button
           className="w-[24px] h-[24px] flex justify-center items-center absolute top-[38px] right-[16px] md:top-[20px] md:right-[20px]"
-          onClick={() => router.back()}
+          onClick={onDismiss}
         >
           <Image src={'/svg/closes.svg'} alt={'X'} width={24} height={24} />
         </button>

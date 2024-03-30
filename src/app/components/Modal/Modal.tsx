@@ -17,14 +17,14 @@ export function Modal({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  function onDismiss(open: boolean) {
+  const onDismiss = (open: boolean) => {
     if (!open) {
       if (width > 767) {
         document.documentElement.className = '';
       }
       router.back();
     }
-  }
+  };
 
   return (
     <Dialog.Root open onOpenChange={onDismiss}>
