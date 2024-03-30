@@ -8,7 +8,7 @@ import { useWindowSize } from '@/hooks/useWindowSize/useWindowSize';
 
 export function Header() {
   const width = useWindowSize();
-
+  const toogleModal = () => {};
   return (
     <>
       <header className="flex justify-between items-center">
@@ -23,7 +23,7 @@ export function Header() {
             fill
           />
         </Link>
-        <NavLinks mob={false} />
+        <NavLinks mob={false} setOpenMobMenu={toogleModal} />
         <MobMenu />
       </header>
     </>
