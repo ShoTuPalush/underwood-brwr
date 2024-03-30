@@ -1,22 +1,17 @@
+import { randomColor } from '@/helpers/randomColor';
 import { useWindowSize } from '@/hooks/useWindowSize/useWindowSize';
+import { CategoryItems } from '@/lib/api';
 import clsx from 'clsx';
 import { Open_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ICategoryItem } from '../CategoryList/CategoryList';
 
 export const openSans = Open_Sans({ subsets: ['latin'] });
 
-interface ICategoryItem {
-  idCategory: string;
-  strCategory: string;
-  strCategoryThumb: string;
-  strCategoryDescription: string;
-  len: number;
-  fId: string;
-}
-
 export function CategoryItem({ categor }: { categor: ICategoryItem }) {
   const width = useWindowSize();
+  const color = randomColor();
 
   return (
     <>
@@ -46,7 +41,10 @@ export function CategoryItem({ categor }: { categor: ICategoryItem }) {
           </p>
           <Link
             href={`/products/${categor.fId}`}
-            className="flex items-center gap-[10px] w-full h-[30px] pl-[16px] rounded-[2px] bg-[#f3e1ff] text-xs text-[#363636] "
+            style={{ backgroundColor: color }}
+            className={clsx(
+              `flex items-center gap-[10px] hover:gap-[40px] w-full h-[30px] pl-[16px] rounded-[2px]  text-xs text-[#363636] `
+            )}
           >
             Read more{' '}
             <Image src={'/svg/arrow.svg'} alt="arrow" width={21} height={6} />

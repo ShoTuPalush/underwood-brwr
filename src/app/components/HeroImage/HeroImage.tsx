@@ -8,9 +8,9 @@ export function HeroImage() {
 
   return (
     <>
-      <div className="relative w-[269px] h-[134px] md:w-[580px] md:h-[367px]">
+      <div className="relative w-[269px] h-[134px] md:w-[580px] md:h-[367px] mb-[24px] lg:mb-0">
         <Image
-          className="rounded-[74px] mx-[29px] mb-[24px]"
+          className="rounded-[74px] mx-[29px]"
           src={width > 767 ? '/img/hero.png' : '/img/heroMob.png'}
           alt="hero"
           fill

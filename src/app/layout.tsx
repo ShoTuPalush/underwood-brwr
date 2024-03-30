@@ -20,18 +20,19 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <TanstackProvider>
-        <body className={`${helvetica.className} antialiased`}>
-          {modal}
-          <div className=" container px-[24px] pt-[10px] md:px-[40px] md:pt-[16px]">
-            <Header />
-
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </body>
-      </TanstackProvider>
-    </html>
+    <>
+      <html lang="en">
+        <TanstackProvider>
+          <body className={`${helvetica.className} antialiased`}>
+            {modal}
+            <div className=" container px-[24px] pt-[10px] md:px-[40px] md:pt-[16px]">
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </div>
+          </body>
+        </TanstackProvider>
+      </html>
+    </>
   );
 }

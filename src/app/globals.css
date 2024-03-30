@@ -6,3 +6,7 @@
 .no-scroll {
   overflow: hidden;
 }
+
+* {
+  transition: all ease-out 200ms;
+}

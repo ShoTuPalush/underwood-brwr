@@ -2,13 +2,9 @@
 
 import { MealPageComponent } from '@/app/components/MealPageComponent/MealPageComponent';
 import { CardSkeleton } from '@/app/components/Skeletons/Skeletons';
-import { getMeals } from '@/lib/api';
+import { Meals, getMeals } from '@/lib/api';
 import { useQuery } from '@tanstack/react-query';
 import { usePathname } from 'next/navigation';
-
-interface Meals {
-  [key: string]: any;
-}
 
 export default function Product() {
   const router: string = usePathname().split('/')[2];

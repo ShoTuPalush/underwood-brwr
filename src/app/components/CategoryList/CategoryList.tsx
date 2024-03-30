@@ -1,16 +1,12 @@
 'use client';
 
-import { getCategories } from '@/lib/api';
+import { CategoryItems, getCategories } from '@/lib/api';
 import { useQuery } from '@tanstack/react-query';
 import { CategoryItem } from '../CategoryItem/CategoryItem';
 import { CategoryRandomItem } from '../CategoryRandomItem/CategoryRandomItem';
 import { MealsSkeleton } from '../Skeletons/Skeletons';
 
-interface ICategoryItem {
-  idCategory: string;
-  strCategory: string;
-  strCategoryThumb: string;
-  strCategoryDescription: string;
+export interface ICategoryItem extends CategoryItems {
   len: number;
   fId: string;
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-interface CategoryItem {
+export interface CategoryItems {
   idCategory: string;
   strCategory: string;
   strCategoryThumb: string;
@@ -8,7 +8,7 @@ interface CategoryItem {
 }
 
 interface CategoryList {
-  categories: CategoryItem[];
+  categories: CategoryItems[];
 }
 
 interface ListOfCategory {
@@ -21,7 +21,7 @@ interface ItemOfCategory {
   idMeal: string;
 }
 
-interface Meals {
+export interface Meals {
   [key: string]: any;
 }
 

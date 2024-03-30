@@ -31,7 +31,7 @@ export function CategoryRandomItem() {
           </p>
           <Link
             href={'/products'}
-            className="flex items-center gap-[10px] w-full h-[30px] pl-[16px] rounded-[2px] bg-[#f3e1ff] text-xs text-[#363636] "
+            className="flex items-center gap-[10px] hover:gap-[40px] w-full h-[30px] pl-[16px] rounded-[2px] bg-[#f3e1ff] text-xs text-[#363636] "
           >
             Read more{' '}
             <Image src={'/svg/arrow.svg'} alt="arrow" width={21} height={6} />

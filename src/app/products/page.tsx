@@ -1,13 +1,9 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { getRandomMeals } from '@/lib/api';
+import { Meals, getRandomMeals } from '@/lib/api';
 import { MealPageComponent } from '../components/MealPageComponent/MealPageComponent';
 import { CardSkeleton } from '../components/Skeletons/Skeletons';
-
-interface Meals {
-  [key: string]: any;
-}
 
 export default function Product() {
   const { data, isFetching } = useQuery<{ meals: Meals }, string>({

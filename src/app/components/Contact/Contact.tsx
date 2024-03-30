@@ -4,6 +4,7 @@ import { useWindowSize } from '@/hooks/useWindowSize/useWindowSize';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import toast, { Toaster } from 'react-hot-toast';
 import * as Yup from 'yup';
 
 interface IForm {
@@ -30,6 +31,7 @@ export function Contact() {
   };
 
   const handleSubmit = (values: IForm) => {
+    toast.success('Send your contact');
     console.log(values);
   };
 
@@ -141,6 +143,7 @@ export function Contact() {
           </Formik>
         </div>
       </div>
+      <Toaster />
     </>
   );
 }

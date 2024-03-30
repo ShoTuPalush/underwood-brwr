@@ -5,10 +5,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { useState } from 'react';
 import { openSans } from '../CategoryItem/CategoryItem';
-
-interface Meals {
-  [key: string]: any;
-}
+import { Meals } from '@/lib/api';
 
 export function MealPageComponent({ meals }: { meals: Meals }) {
   const width = useWindowSize();
