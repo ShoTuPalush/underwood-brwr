@@ -19,9 +19,8 @@ export function Modal({ children }: { children: React.ReactNode }) {
 
   const onDismiss = (open: boolean) => {
     if (!open) {
-      if (width > 767) {
-        document.documentElement.className = '';
-      }
+      document.documentElement.className = '';
+
       router.back();
     }
   };
